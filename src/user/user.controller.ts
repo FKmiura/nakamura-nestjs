@@ -8,9 +8,12 @@ import {
   Delete,
 } from '@nestjs/common';
 import { UserService } from './user.service';
+import { Prisma } from '@prisma/client';
+import { ApiTags } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
+@ApiTags('Users')
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
